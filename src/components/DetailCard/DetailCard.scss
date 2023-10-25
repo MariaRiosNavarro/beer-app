@@ -1,0 +1,40 @@
+@import "../../variables.scss";
+@import "../../mixin.scss";
+
+.detail-card {
+  @include f-column;
+  justify-content: space-between;
+  //   padding-bottom: 5.5rem;
+
+  .img-detail-wrapper {
+    height: 40vh;
+    overflow: hidden;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .text-detail-wrapper {
+    h2 {
+      font-size: 4rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      color: $color;
+    }
+    div {
+      color: $light-gray;
+      &:first-of-type {
+        padding-top: 2.4rem;
+      }
+      &:nth-of-type(2) {
+        padding-bottom: 1rem;
+      }
+    }
+    .description {
+      padding-bottom: 2.8rem;
+    }
+  }
+}

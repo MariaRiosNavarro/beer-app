@@ -1,39 +1,43 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+// import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import PropTypes from "prop-types";
 import "./Detail.scss";
 import Navigation from "../components/Navigation/Navigation";
+import DetailCard from "../components/DetailCard/DetailCard";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Loading from "../components/Loading/Loading";
 
-const Detail = (props) => {
-  const [count, setCount] = useState(0);
+const Detail = () => {
+  const [beer, setBeer] = useState();
+
+  const { idBeer } = useParams();
+
+  const beerUrl = `https://ih-beers-api2.herokuapp.com/beers/${idBeer}`;
+
   useEffect(() => {
-    console.log(count);
-  }, [count]);
+    fetch(beerUrl)
+      .then((response) => response.json())
+      .then((oneBeer) => {
+        setBeer(oneBeer);
+      })
+      .catch((error) => {
+        console.error("Error Message ❌🍺❌ ", error);
+      });
+  }, []);
+
+  if (!beer) {
+    return <Loading />;
+  }
 
   return (
     <>
-      <h1>Detail</h1>
-      <section>
-        <article>
-          <h2>{props.property}</h2>
-          <button
-            onClick={() => {
-              setCount(count + 1);
-            }}
-          >
-            click +1
-          </button>
-          <p>{count}</p>
-          <Link to="/">See More</Link>
-        </article>
+      <section className="detail-wrapper">
+        <DetailCard detailItem={beer} />
       </section>
       <Navigation />
     </>
   );
-};
-
-Detail.propTypes = {
-  property: PropTypes.string,
 };
 
 export default Detail;

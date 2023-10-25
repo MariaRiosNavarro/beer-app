@@ -47,3 +47,7 @@ img {
 .column {
   @include f-column;
 }
+
+.space {
+  justify-content: space-between;
+}
