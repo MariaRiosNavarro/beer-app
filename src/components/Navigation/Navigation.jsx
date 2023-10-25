@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <>
       <footer className="footer">
-        <Button bgColor="bg-white" href="/" svgIcon={beerSvg} />
+        <Button bgColor="bg-white" href="/" element={beerSvg} />
       </footer>
     </>
   );

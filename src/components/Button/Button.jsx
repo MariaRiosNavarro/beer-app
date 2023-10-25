@@ -6,7 +6,7 @@ const Button = (props) => {
   return (
     <>
       <div className={`btn ${props.bgColor}`}>
-        <Link to={props.href}>{props.svgIcon}</Link>
+        <Link to={props.href}>{props.element}</Link>
       </div>
     </>
   );
@@ -15,7 +15,7 @@ const Button = (props) => {
 Button.propTypes = {
   href: PropTypes.string,
   bgColor: PropTypes.string,
-  svgIcon: PropTypes.element,
+  element: PropTypes.element,
 };
 
 export default Button;

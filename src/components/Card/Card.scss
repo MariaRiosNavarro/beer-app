@@ -1,2 +1,15 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
+
+.text-card-wrapper {
+  .btn {
+    height: 3rem;
+    width: 11rem;
+    border-radius: 40px;
+
+    font-size: 2rem;
+    a {
+      color: #f9f0f0;
+    }
+  }
+}
