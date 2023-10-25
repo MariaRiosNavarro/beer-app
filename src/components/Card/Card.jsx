@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 const Card = ({ beerItem }) => {
   return (
     <>
-      <article>
+      <article className="card">
         <div className="img-card-wrapper">
           <img src={beerItem.image_url} alt={beerItem.name} />
         </div>

@@ -1,2 +1,8 @@
 @import "../variables.scss";
 @import "../mixin.scss";
+
+.grid-list-section {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1.4rem;
+}

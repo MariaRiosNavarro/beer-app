@@ -19,6 +19,8 @@ const BeerList = () => {
       });
   }, []);
 
+  // Loading Animation
+
   if (!beerData) {
     return (
       <div className="animation">
@@ -34,7 +36,7 @@ const BeerList = () => {
 
   return (
     <>
-      <section>
+      <section className="grid-list-section">
         {beerData.map((beer) => (
           <Card key={beer._id} beerItem={beer} />
         ))}

@@ -1,15 +1,54 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
 
-.text-card-wrapper {
-  .btn {
-    height: 3rem;
-    width: 11rem;
-    border-radius: 40px;
+.card {
+  padding: 2rem;
+  height: 25rem;
+  border-bottom: 1px solid $light-gray;
+  @include f-row;
+  justify-content: space-between;
+  align-items: center;
 
-    font-size: 2rem;
-    a {
-      color: #f9f0f0;
+  .img-card-wrapper {
+    width: 30%;
+    overflow: hidden;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .text-card-wrapper {
+    width: 70%;
+    padding: 2rem;
+
+    height: 100%;
+    h2 {
+      font-size: clamp(1.5rem, 2.5rem, 3rem);
+      word-wrap: break-word;
+
+      font-weight: 500;
+    }
+    h3 {
+      font-size: clamp(1rem, 2rem, 2.5rem);
+      color: $color;
+    }
+
+    p {
+      padding: 2rem 0;
+      font-size: 1.5rem;
+    }
+
+    .btn {
+      height: 3rem;
+      width: 11rem;
+      border-radius: 40px;
+      font-size: 2rem;
+      a {
+        color: #f9f0f0;
+      }
     }
   }
 }
