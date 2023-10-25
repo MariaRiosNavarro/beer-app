@@ -9,18 +9,19 @@ const url = "https://ih-beers-api2.herokuapp.com/beers";
 const BeerList = () => {
   const [beerData, setBeerData] = useState();
 
-  useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setBeerData(data);
-      })
-      .catch((error) => {
-        console.error("Error Message ❌🍺❌ ", error);
-      });
-  }, []);
-
-  // Loading Animation
+  setTimeout(
+    useEffect(() => {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          setBeerData(data);
+        })
+        .catch((error) => {
+          console.error("Error Message ❌🍺❌ ", error);
+        });
+    }, []),
+    5000
+  );
 
   if (!beerData) {
     return <Loading />;
@@ -33,6 +34,7 @@ const BeerList = () => {
           <Card key={beer._id} beerItem={beer} />
         ))}
       </section>
+
       <Navigation />
     </>
   );
