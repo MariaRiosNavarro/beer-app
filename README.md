@@ -1,6 +1,6 @@
 # React Beer App (Api), Mobile
 
-# [Vercel Deployment]()
+# [Vercel Deployment](https://beer-app-lovat.vercel.app/)
 
 <div>
 <img src="./public/img/beer.GIF" alt="readme pic" width="300px"/>
@@ -17,7 +17,7 @@ https://dribbble.com/shots/1975846-Beer-loader
 
 ```
 
-to make the Loading animation, I had to adapt some positions and structure to be able to use it in my scss.I have also made a Gif of it to be shown here, but in this repository I use the code and not the gif.
+to make the Loading animation, I had to adapt some positions and structure to be able to use it in my `scss`. I have also made a Gif of it to be shown here, but in this repository I use the code and not the gif.
 
 # Mobile
 
