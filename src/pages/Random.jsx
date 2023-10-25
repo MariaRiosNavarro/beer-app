@@ -1,37 +1,37 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import Loading from "../components/Loading/Loading";
+import DetailCard from "../components/DetailCard/DetailCard";
+import Navigation from "../components/Navigation/Navigation";
 import "./Random.scss";
 
-const Random = (props) => {
-  const [count, setCount] = useState(0);
+const Random = () => {
+  const [random, setRandom] = useState();
+
+  const randomUrl = `https://ih-beers-api2.herokuapp.com/beers/random`;
+
   useEffect(() => {
-    console.log(count);
-  }, [count]);
+    fetch(randomUrl)
+      .then((response) => response.json())
+      .then((beerRandom) => {
+        setRandom(beerRandom);
+      })
+      .catch((error) => {
+        console.error("Error Message ❌🍺❌ ", error);
+      });
+  }, []);
+
+  if (!random) {
+    return <Loading />;
+  }
 
   return (
     <>
-      <h1>Random</h1>
-      <section>
-        <article>
-          <h2>{props.property}</h2>
-          <button
-            onClick={() => {
-              setCount(count + 1);
-            }}
-          >
-            click +1
-          </button>
-          <p>{count}</p>
-          <Link to="/">See More</Link>
-        </article>
+      <section className="detail-wrapper">
+        <DetailCard detailItem={random} />
       </section>
+      <Navigation />
     </>
   );
-};
-
-Random.propTypes = {
-  property: PropTypes.string,
 };
 
 export default Random;
