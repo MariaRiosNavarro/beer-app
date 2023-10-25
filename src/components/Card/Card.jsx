@@ -2,21 +2,21 @@ import PropTypes from "prop-types";
 import "./Card.scss";
 import Button from "../Button/Button";
 
-const Card = (props) => {
+const Card = ({ beerItem }) => {
   return (
     <>
       <article>
         <div className="img-card-wrapper">
-          <img src={props.image_url} alt={props.name} />
+          <img src={beerItem.image_url} alt={beerItem.name} />
         </div>
         <div className="text-card-wrapper">
-          <h2>{props.name}</h2>
-          <h3>{props.tagline}</h3>
-          <p>Created by : {props.name}</p>
+          <h2>{beerItem.name}</h2>
+          <h3>{beerItem.tagline}</h3>
+          <p>Created by : {beerItem.name}</p>
           <Button
             bgColor="bg-yellow"
             element="Details"
-            href={`/beer/${props._id}`}
+            href={`/beer/${beerItem._id}`}
           />
         </div>
       </article>
@@ -25,10 +25,7 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  name: PropTypes.string,
-  image_url: PropTypes.string,
-  tagline: PropTypes.string,
-  _id: PropTypes.string,
+  beerItem: PropTypes.object,
 };
 
 export default Card;
