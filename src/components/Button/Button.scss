@@ -1,2 +1,23 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
+
+.btn {
+  height: 5.7rem;
+  width: 5.7rem;
+  border-radius: 50%;
+  @include center-row;
+  overflow: hidden;
+
+  svg {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.bg-white {
+  background-color: $w;
+}
+
+.bg-yellow {
+  background-color: $color;
+}

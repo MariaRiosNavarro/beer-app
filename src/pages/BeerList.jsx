@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./BeerList.scss";
+import Navigation from "../components/Navigation/Navigation";
 
 const BeerList = (props) => {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ const BeerList = (props) => {
           <Link to="/">See More</Link>
         </article>
       </section>
+      <Navigation />
     </>
   );
 };

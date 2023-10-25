@@ -1,37 +1,21 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Button.scss";
 
 const Button = (props) => {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    console.log(count);
-  }, [count]);
-
   return (
     <>
-      <h1>Button</h1>
-      <section>
-        <article>
-          <h2>{props.property}</h2>
-          <button
-            onClick={() => {
-              setCount(count + 1);
-            }}
-          >
-            click +1
-          </button>
-          <p>{count}</p>
-          <Link to="/">See More</Link>
-        </article>
-      </section>
+      <div className={`btn ${props.bgColor}`}>
+        <Link to={props.href}>{props.svgIcon}</Link>
+      </div>
     </>
   );
 };
 
 Button.propTypes = {
-  property: PropTypes.string,
+  href: PropTypes.string,
+  bgColor: PropTypes.string,
+  svgIcon: PropTypes.element,
 };
 
 export default Button;

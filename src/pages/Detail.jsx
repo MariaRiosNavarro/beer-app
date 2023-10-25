@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Detail.scss";
+import Navigation from "../components/Navigation/Navigation";
 
 const Detail = (props) => {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ const Detail = (props) => {
           <Link to="/">See More</Link>
         </article>
       </section>
+      <Navigation />
     </>
   );
 };

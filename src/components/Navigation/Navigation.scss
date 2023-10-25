@@ -1,2 +1,14 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 7rem;
+  width: 100%;
+  background-color: $color;
+  @include center-row;
+  svg {
+    fill: #4a2328;
+  }
+}
