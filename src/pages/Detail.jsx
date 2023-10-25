@@ -30,7 +30,7 @@ const Detail = () => {
   return (
     <>
       <section className="detail-wrapper">
-        <DetailCard detailItem={beer} />
+        <DetailCard detailItem={beer} href="/beers" />
       </section>
       <Navigation />
     </>

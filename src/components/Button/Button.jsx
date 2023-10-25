@@ -15,7 +15,7 @@ const Button = (props) => {
 Button.propTypes = {
   href: PropTypes.string,
   bgColor: PropTypes.string,
-  element: PropTypes.element,
+  element: PropTypes.node,
 };
 
 export default Button;

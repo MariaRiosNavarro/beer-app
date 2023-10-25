@@ -3,7 +3,7 @@ import "./DetailCard.scss";
 import Button from "../Button/Button";
 import { backSvg } from "../../assets/svg/svg";
 
-const DetailCard = ({ detailItem }) => {
+const DetailCard = ({ detailItem, href }) => {
   return (
     <>
       <article className="detail-card">
@@ -22,7 +22,7 @@ const DetailCard = ({ detailItem }) => {
             <span>{detailItem.attenuation_level}</span>
           </div>
           <p className="description">{detailItem.description}</p>
-          <Button bgColor="bg-yellow" element={backSvg} href="/beers" />
+          <Button bgColor="bg-yellow" element={backSvg} href={href} />
         </div>
       </article>
     </>
@@ -31,6 +31,7 @@ const DetailCard = ({ detailItem }) => {
 
 DetailCard.propTypes = {
   detailItem: PropTypes.object,
+  href: PropTypes.string,
 };
 
 export default DetailCard;

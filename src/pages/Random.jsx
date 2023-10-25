@@ -27,7 +27,7 @@ const Random = () => {
   return (
     <>
       <section className="random-wrapper">
-        <DetailCard detailItem={random} />
+        <DetailCard detailItem={random} href="/" />
       </section>
       <Navigation />
     </>
