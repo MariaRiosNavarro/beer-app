@@ -1,21 +1,23 @@
 import "./Home.scss";
 import HomePart from "../components/HomePart/HomePart";
-import PropTypes from "prop-types";
 
 const Home = () => {
   return (
-    <>
-      <HomePart href={"/beers"} src={"/public/img/home.jpeg"}></HomePart>
+    <div className="home-wrapper">
+      <HomePart
+        href={"/beers"}
+        src={"/img/home.png"}
+        title="All Beers"
+        description="In this journey through the world of beer, our app celebrates the rich tapestry of styles, flavors, and stories that make beer a truly global phenomenon"
+      ></HomePart>
       <HomePart
         href={`/beer/random`}
-        src={"/public/img/random.jpeg"}
+        src={"/img/random.png"}
+        title="Random Beer"
+        description="Celebrate the diversity of the world's beers with just a click! Click here to discover a random beer from around the globe and immerse yourself in the rich tapestry of flavors"
       ></HomePart>
-    </>
+    </div>
   );
-};
-
-Home.propTypes = {
-  id: PropTypes.string,
 };
 
 export default Home;

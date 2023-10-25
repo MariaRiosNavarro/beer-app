@@ -32,3 +32,18 @@
   font-family: $roboto-b;
   font-weight: 700;
 }
+
+@mixin rslab-light {
+  font-family: $robo-slab-var;
+  font-weight: 500;
+}
+
+@mixin rslab-bold {
+  font-family: $robo-slab-var;
+  font-weight: 700;
+}
+
+@mixin rslab-extra-bold {
+  font-family: $robo-slab-var;
+  font-weight: 900;
+}

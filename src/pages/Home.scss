@@ -1,2 +1,10 @@
 @import "../variables.scss";
 @import "../mixin.scss";
+
+.home-wrapper {
+  padding: 4rem 3.5rem;
+  @include f-column;
+  justify-content: space-between;
+  gap: auto;
+  height: 100vh;
+}

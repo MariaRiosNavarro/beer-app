@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+@import "../../mixin.scss";
+
+.home-section {
+  height: 40vh;
+  max-height: 50vh;
+  .img-home-wrapper {
+    height: 23rem;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(50%);
+    }
+  }
+  h2 {
+    // height: 4.6rem;
+    background-color: $color;
+    color: $w;
+    font-size: 3rem;
+    padding: 0.5rem 1.6rem;
+    @include rslab-bold;
+  }
+  p {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .home-section {
+    .img-home-wrapper {
+      height: 19rem;
+    }
+  }
+}
