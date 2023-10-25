@@ -1,37 +1,21 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import "./Home.scss";
+import HomePart from "../components/HomePart/HomePart";
+import PropTypes from "prop-types";
 
-const Home = (props) => {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    console.log(count);
-  }, [count]);
-
+const Home = () => {
   return (
     <>
-      <h1>Home</h1>
-      <section>
-        <article>
-          <h2>{props.property}</h2>
-          <button
-            onClick={() => {
-              setCount(count + 1);
-            }}
-          >
-            click +1
-          </button>
-          <p>{count}</p>
-          <Link to="/">See More</Link>
-        </article>
-      </section>
+      <HomePart href={"/beers"} src={"/public/img/home.jpeg"}></HomePart>
+      <HomePart
+        href={`/beer/random`}
+        src={"/public/img/random.jpeg"}
+      ></HomePart>
     </>
   );
 };
 
 Home.propTypes = {
-  property: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default Home;
