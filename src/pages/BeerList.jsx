@@ -8,22 +8,23 @@ const url = "https://ih-beers-api2.herokuapp.com/beers";
 
 const BeerList = () => {
   const [beerData, setBeerData] = useState();
+  const [loading, setLoading] = useState(true);
 
-  setTimeout(
-    useEffect(() => {
+  useEffect(() => {
+    setTimeout(() => {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
           setBeerData(data);
+          setLoading(false);
         })
         .catch((error) => {
           console.error("Error Message ❌🍺❌ ", error);
         });
-    }, []),
-    5000
-  );
+    }, 2000);
+  }, []);
 
-  if (!beerData) {
+  if (loading) {
     return <Loading />;
   }
 
