@@ -10,27 +10,30 @@ const Detail = () => {
 
   const { idBeer } = useParams();
 
-  const beerUrl = `https://ih-beers-api2.herokuapp.com/beers/${idBeer}`;
-
   useEffect(() => {
-    fetch(beerUrl)
-      .then((response) => response.json())
-      .then((oneBeer) => {
-        setBeer(oneBeer);
-      })
-      .catch((error) => {
-        console.error("Error Message ❌🍺❌ ", error);
-      });
+    if (idBeer) {
+      fetch(`https://ih-beers-api2.herokuapp.com/beers/${idBeer}`)
+        .then((res) => res.json())
+        .then((oneBeer) => setBeer(oneBeer))
+        .catch((err) => console.error("error fetching by ID", err));
+    } else {
+      fetch("https://ih-beers-api2.herokuapp.com/beers/random")
+        .then((res) => res.json())
+        .then((randomBeer) => setBeer(randomBeer))
+        .catch((err) => console.error("error fetching random beer", err));
+    }
   }, []);
 
   if (!beer) {
     return <Loading />;
   }
 
+  let backLink = idBeer ? "/beers" : "/";
+
   return (
     <>
       <section className="detail-wrapper">
-        <DetailCard detailItem={beer} href="/beers" />
+        <DetailCard detailItem={beer} href={backLink} />
       </section>
       <Navigation />
     </>
